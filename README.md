@@ -1,5 +1,2 @@
 # py-cajas-montufar-daniel-mois
-Cambio Pepito 
-Juanita
-Arreglar
-Cambio pepito 3 
+Cambio 1 
