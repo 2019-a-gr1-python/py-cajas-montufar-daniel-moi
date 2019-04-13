@@ -1,7 +1,6 @@
-# py-cajas-montufar-daniel-moi
-<<<<<<< HEAD
-cambio 1
-Cambio Pepito 
-=======
-Juanita
->>>>>>> 029d5a2c34ffca2b569275cacd8d63d2a50c3500
+# py-cajas-montufar-daniel-moisns
+Cambio 1 
+Cambio Pepito
+Cambio Juanita 1  
+Cambio Pepito 2
+Cambio Pepito 3
