@@ -5,9 +5,10 @@ def crear_musica():
     code = input("Ingrese un id: ")
     genre = input("Ingrese el género de la canción: ")
     album = input("Ingrese el nombre del álbum de la canción: ")
+    artist = input("Ingrese el autor de la canción: ")
     date = input("Ingrese la fecha de publicación de la canción: ")
     description = input("Ingrese una descripción de la canción: ")
-    musica = code + ";" + genre + ";" + album + ";" + date + ';' + description + '
+    musica = code + ";" + genre + ";" + album + "; " + artist + " + date + ';' + description + '
     manejo_archivos.agregar_a_archivo('./musics.txt', 'a', musics)
     
 def obtener_lista_musicas():
@@ -35,8 +36,8 @@ def guardar_listadediccionarios_como_listadecadenadetexto(lista):
 def eliminar_musica_por_codigo(code):
     lista = obtener_lista_musicas()
     musica_a_eliminar= obtener_musica_por_codigo(code)
-    if musica_a_remover != None:
-        lista.remover(musica_a_remover)
+    if musica_a_eliminar != None:
+        lista.eliminar(musica_a_remover)
     print(f'Eliminando musica con código {code}')
     guardar_listadediccionarios_como_listadecadenadetexto(lista)
     
@@ -45,7 +46,7 @@ def actualizar_musica_por_diccionarios(musica, dato_actualizado):
     index = lista.index(musica)
     musica.update(dato_actualizado)
     lista [index] = musica
-    print(f"Actualizando musica con código {mascota['code']}")
+    print(f"Actualizando musica con código {musica['code']}")
     guardar_listadediccionarios_como_listadecadenadetexto(lista)
     
     
