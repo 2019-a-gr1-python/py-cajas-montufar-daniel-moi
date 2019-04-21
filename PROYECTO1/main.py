@@ -1,21 +1,21 @@
-import funciones_de_musicas
+import funciones_musicas
 
 
-def imprimir_encabezado_en_tabla_muscias():
-    print(''%-5s%-12s%-12s%-12s%-12s%-12s%' % ('Cod', 'Genero', 'Album','Autor' 'Fecha','Descripción')
+def imprimir_encabezado_en_tablamusicas():
+    print('%-5s%-12s%-12s%-12s%-12s%-12s%' % ('Cod', 'Genero', 'Album','Autor' 'Fecha','Descripción'))
           
 def imprimir_fila_en_tablamusica(musica):
-    print ('%(code)-5s%(genre)-12s%(album)12s%(autor)-12s%(fecha)-12s%(description)-12s' % musica)
+    print('%(code)-5s%(genre)-12s%(album)12s%(autor)-12s%(fecha)-12s%(description)-12s' % musica)
           
 def mostrar_lista_musicas():
     print("Lista de musicas:")
-    lista = funciones_de_musicas.obtener_lista_musicas()
+    lista = funciones_musicas.obtener_lista_musicas()
     imprimir_encabezado_en_tablamusicas()
     for musica in lista:
         imprimir_fila_en_tablamusica(musica)
     ordenar = True
     while (ordenar):
-       respuesta =input(("Desea ordenar la lista (Si/No): ")
+       respuesta =input("Desea ordenar la lista (Si/No): ")
        if (True if respuesta == "Si" else False):
            ordenar = True
            respuesta_orden =  input ("Como desea ordenar la lista?(A: ascendente/D: descendente):")
@@ -26,7 +26,7 @@ def mostrar_lista_musicas():
            print("0) Código")
            print("1) Género")
            print("2) Álbum")
-            print("3) Autor")             
+           print("3) Autor")             
            print("4) Fecha de Publicación")
            print("5) Descripción")
            llave = input('Ingrese una llave a ordenar:')
@@ -60,24 +60,24 @@ def mostrar_lista_musicas():
 def buscar_musica():
     print("Búsqueda de musica:")
     code = input ("Ingrese el código de la canción que desea buscar:")
-    mascota = funciones_de_musicas.obtener_musicas_por_codigo(code)
+    musica = funciones_musicas.obtener_musica_por_codigo(code)
     if musica != None:
-        imprimir_encabezado_en_tablamusica()
+        imprimir_encabezado_en_tablamusicas()
         imprimir_fila_en_tablamusica(musica)
     else:
         print(f"Musica con código {code} no existe")
                         
-#mostrar interfaz para la eliminación de datos
-def eliminar musica():
+# mostrar interfaz para la eliminación de datos
+def eliminar_musica():
     print("Elminar musica:")
     code = input ("Ingrese la música que desea eliminar:")
-    funciones_de_musicas.eliminar_musica_por_codigo(code)
+    funciones_musicas.eliminar_musica_por_codigo(code)
 
-#mostrar interfaz para la actualización de datos
-def actualizar musica():
+# mostrar interfaz para la actualización de datos
+def actualizar_musica():
     print("Actualización de musicas:")
     code = input("Ingrese el código de música a actualizar: ")
-    musica = funciones_de_musicas.obtener_musica_por_codigo(code)
+    musica = funciones_musicas.obtener_musica_por_codigo(code)
     def opciones (value):
         try:
             return {
@@ -107,7 +107,7 @@ def actualizar musica():
             dato_a_actualizar = {
                 llave_a_actualizar: valor
             }                
-            funciones_de_musicas.actualizar_musica_por_diccionario(musica, dato_a_actualizar)
+            funciones_musicas.actualizar_musica_por_diccionario(musica, dato_a_actualizar)
         except TypeError:
             print(f'Option {option}')
     else:
@@ -118,7 +118,7 @@ def acciones (value):
     try:
         return {
             0: None,
-            1: funciones_de_musicas.crear_musica,
+            1: funciones_musicas.crear_musica,
             2: mostrar_lista_musicas,
             3: buscar_musica,
             4: eliminar_musica,
