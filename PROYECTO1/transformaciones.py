@@ -10,5 +10,5 @@ def transformar_cadenatexto_a_diccionariomusica(linea):
     }
     return musica
 
-def transformar_diccioanriomusica_a_cadenatexto(musica):
-    return f"{musica['code']};{musica['genre']};{musica['album']};{musica['artist']};{musica['date']};{mascota['description']}"
+def transformar_diccionariomusica_a_cadenatexto(musica):
+    return f"{musica['code']};{musica['genre']};{musica['album']};{musica['artist']};{musica['date']};{musica['description']}"

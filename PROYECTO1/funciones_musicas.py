@@ -30,16 +30,16 @@ def obtener_musica_por_codigo(code):
 def guardar_listadediccionarios_como_listadecadenadetexto(lista):
     lista_cadena = []
     for musica in lista:
-        cadena = transformaciones.transforma_diccionariomusica_a_cadenatexto(musica)
+        cadena = transformaciones.transformar_diccionariomusica_a_cadenatexto(musica)
     manejo_archivos.agregar_a_archivo('./musics.txt', 'w', *lista_cadenas)
     
 def eliminar_musica_por_codigo(code):
     lista = obtener_lista_musicas()
     musica_a_eliminar= obtener_musica_por_codigo(code)
     if musica_a_eliminar != None:
-        lista.eliminar(musica_a_eliminar)
+        lista.remove(musica_a_eliminar)
     print(f'Eliminando musica con código {code}')
-    guardar_listadediccionarios_como_listadecadenadetexto(lista)
+        guardar_listadediccionarios_como_listadecadenadetexto(lista)
     
 def actualizar_musica_por_diccionarios(musica, dato_actualizado):
     lista = obtener_lista_musicas()

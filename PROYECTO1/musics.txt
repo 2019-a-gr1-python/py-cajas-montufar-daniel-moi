@@ -1,5 +1,2 @@
-2;Bachata;Te piedo;Aventura;2015;Nueva;No rescatado
-1;Rock;;6;Cafe;asdsad;No rescatado
-3;Salsa;Quito;7;Blanco;Es blanco con algunas manchas cafes;No rescatado
-4;Salsa;Cuenca;10;Blanco y Cafe;Esta lastimado de gravedad;No rescatado
-2;Bachata;Quito;3;Cafe;Rescatado;No rescatado
+2;Bachata;Te pierdo;Aventura;2015;Nueva;No rescatado
+1;Rock;Noche eterna;Bacilos;2012;antigua;No rescatado
