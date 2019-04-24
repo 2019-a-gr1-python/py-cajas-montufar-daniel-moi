@@ -6,9 +6,10 @@ def transformar_cadenatexto_a_diccionariomusica(linea):
         'album': partes_linea[2],
         'artist': partes_linea[3],
         'date': partes_linea[4],
+        'state': partes_linea[6],
         'description': partes_linea[5]
     }
     return musica
 
 def transformar_diccionariomusica_a_cadenatexto(musica):
-    return f"{musica['code']};{musica['genre']};{musica['album']};{musica['artist']};{musica['date']};{musica['description']}"
+    return f"{musica['code']};{musica['genre']};{musica['album']};{musica['artist']};{musica['date']};{musica['description']};{musica['state']}"
