@@ -15,50 +15,7 @@ def mostrar_lista_musicas():
     for musica in lista:
         imprimir_fila_en_tablamusica(musica)
     ordenar = True
-    while (ordenar):
-       respuesta =input("Desea ordenar la lista (Si/No): ")
-       if (True if respuesta == "Si" else False):
-           ordenar = True
-           respuesta_orden =  input ("Como desea ordenar la lista?(A: ascendente/D: descendente):")
-           if (True if respuesta_orden == "A" else False):
-              ordenar = False
-           else:
-               ordenar = True
-           print("0) Código")
-           print("1) Género")
-           print("2) Álbum")
-           print("3) Autor")             
-           print("4) Fecha de Publicación")
-           print("5) Estado")
-           print("6) Descripción")
-           llave = input('Ingrese una llave a ordenar:')
-           def llaves (value):
-               try:
-                   return {
-                       0: 'code',
-                       1: 'genre',
-                       2: 'album',
-                       3: 'artist',
-                       4: 'date',
-                       5: 'state',
-                       6: 'description'
-                   }[value]
-               except KeyError:
-                   print("Opción no definida")
-           if (llave.isnumeric()):
-               llave = int(llave)
-               llave_a_ordennar = llaves(llave)
-               def sortBy(elem):
-                   return elem[llave_a_ordennar]
-               impirmir_encabezado_en_tablamusicas()
-               lista.sort(key=sortBy, reverse=ordenar)
-               for musica in lista:
-                   imprimir_fila_en_tablamusica(musica)
-           else:
-               ordenar = False
-       else:
-           ordenar = False
-                        
+                       
 # mostrar interfaz para la búsqueda de datos
 def buscar_musica():
     print("Búsqueda de musica:")
