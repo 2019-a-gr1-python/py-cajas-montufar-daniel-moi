@@ -2,10 +2,11 @@ import funciones_musicas
 
 
 def imprimir_encabezado_en_tablamusicas():
-    print('%-5s%-12s%-12s%-12s%-12s%-12s%' % ('Cod', 'Genero', 'Album','Autor' 'Fecha','Descripción'))
+    print('%-5s%-12s%-12s%-12s%-20s%-15s%-12s' % ('Cod', 'Genero', 'Album','Autor','Fecha','Estado','Descripción'))
           
 def imprimir_fila_en_tablamusica(musica):
-    print('%(code)-5s%(genre)-12s%(album)12s%(autor)-12s%(fecha)-12s%(description)-12s' % musica)
+    print('%(code)-5s%(genre)-12s%(album)-12s%(artist)-12s%(date)-20s%(state)-15s%(description)-12s' % musica)
+    
           
 def mostrar_lista_musicas():
     print("Lista de musicas:")
@@ -28,7 +29,8 @@ def mostrar_lista_musicas():
            print("2) Álbum")
            print("3) Autor")             
            print("4) Fecha de Publicación")
-           print("5) Descripción")
+           print("5) Estado")
+           print("6) Descripción")
            llave = input('Ingrese una llave a ordenar:')
            def llaves (value):
                try:
@@ -36,9 +38,10 @@ def mostrar_lista_musicas():
                        0: 'code',
                        1: 'genre',
                        2: 'album',
-                       3: 'autor',
+                       3: 'artist',
                        4: 'date',
-                       5: 'description'
+                       5: 'state',
+                       6: 'description'
                    }[value]
                except KeyError:
                    print("Opción no definida")
@@ -85,7 +88,8 @@ def actualizar_musica():
                 1: 'album',
                 2: 'artist',
                 3: 'date',
-                4: 'description',
+                4: 'state',
+                5: 'description'
             }[value]
         except KeyError:
             print("Opción no definida")
@@ -97,7 +101,8 @@ def actualizar_musica():
         print("1) Actualizar album")
         print("2) Actualizar autor")
         print("3) Actualizar fecha de publicacion")
-        print("4) Actualizar descripción")
+        print("4) Actualizar estado")
+        print("5) Actualizar descripción")
         read = input("Ingrese una opción: ")
         if (read.isnumeric()):
             opcion_actualizar = int(read)
