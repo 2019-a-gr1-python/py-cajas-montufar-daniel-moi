@@ -1,1 +1,3 @@
-6;Lalala;Visible;BabyRasta;2009;Antigua;No vendido
+ 0;0;0;0;0;0;No vendido
+2;2;2;2;2;22;No vendido
+2;2;2;3;3;3;No vendido

@@ -1,6 +1,7 @@
 import funciones_musicas
 
 
+
 def imprimir_encabezado_en_tablamusicas():
     print('%-5s%-12s%-12s%-12s%-20s%-15s%-12s' % ('Cod', 'Genero', 'Album','Autor','Fecha','Estado','Descripción'))
           
@@ -106,6 +107,7 @@ def main(option):
             acciones(option)()
         except TypeError:
             print(f'Option {option}')
+
 
 main(-1)
                  
