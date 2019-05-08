@@ -1,0 +1,2 @@
+;;;;;;No vendido
+1;Victor;Pasióm;23;M;Nuevo;No registrado

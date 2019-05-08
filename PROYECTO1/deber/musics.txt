@@ -1,3 +1,4 @@
 5;roc;;;;;No vendido
 0;;;;;;No vendido
 ;;;;;;No vendido
+6;Bachata;NuevoSueño;Juan;Enero 2016;Antigua;No vendido
