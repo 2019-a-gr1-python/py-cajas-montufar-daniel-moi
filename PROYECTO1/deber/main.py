@@ -1,12 +1,18 @@
 import funciones_musicas
+import funciones_artistas
 
 def imprimir_encabezado_en_tablamusicas():
     print('%-5s%-12s%-12s%-12s%-20s%-15s%-12s' % ('Cod', 'Genero', 'Album','Autor','Fecha','Estado','Descripción'))
+
+def imprimir_encabezado_en_tablaartistas():
+    print('%-5s%-12s%-12s%-12s%-20s%-15s%-12s' % ('Cod', 'Nombre', 'Album','Edad','Sexo','Estado','Descripción'))
           
 def imprimir_fila_en_tablamusica(musica):
     print('%(code)-5s%(genre)-12s%(album)-12s%(artist)-12s%(date)-20s%(state)-15s%(description)-12s' % musica)
     
-          
+def imprimir_fila_en_tablaartista(artista):
+    print('%(code)-5s%(nombre)-12s%(album)-12s%(edad)-12s%(sexo)-20s%(state)-15s%(description)-12s' % artista)
+            
 def mostrar_lista_musicas():
     print("Lista de musicas:")
     lista = funciones_musicas.obtener_lista_musicas()
@@ -14,7 +20,14 @@ def mostrar_lista_musicas():
     for musica in lista:
         imprimir_fila_en_tablamusica(musica)
     ordenar = True
-                       
+                     
+def mostrar_lista_artistas():
+    print("Lista de artistas:")
+    lista = funciones_artistas.obtener_lista_artistas()
+    imprimir_encabezado_en_tablaartistas()
+    for artista in lista:
+        imprimir_fila_en_tablaartista(artista)
+    ordenar = True
 # mostrar interfaz para la búsqueda de datos
 def buscar_musica():
     print("Búsqueda de musica:")
@@ -25,12 +38,28 @@ def buscar_musica():
         imprimir_fila_en_tablamusica(musica)
     else:
         print(f"Musica con código {code} no existe")
+        
+def buscar_artista():
+    print("Búsqueda de artistas:")
+    code = input ("Ingrese el código del artista que desea buscar:")
+    artista = funciones_artistas.obtener_artista_por_codigo(code)
+    if artista != None:
+        imprimir_encabezado_en_tablaartistas()
+        imprimir_fila_en_tablaartista(artista)
+    else:
+        print(f"Artista con código {code} no existe")
                         
 # mostrar interfaz para la eliminación de datos
 def eliminar_musica():
     print("Elminar musica:")
-    code = input ("Ingrese la música que desea eliminar:")
+    code = input ("Ingrese el código de la canción que desea eliminar:")
     funciones_musicas.eliminar_musica_por_codigo(code)
+    
+# mostrar interfaz para la eliminación de datos
+def eliminar_artista():
+    print("Elminar artista:")
+    code = input ("Ingrese el código del artista que desea eliminar:")
+    funciones_artistas.eliminar_artista_por_codigo(code)
 
 # mostrar interfaz para la actualización de datos
 def actualizar_musica():
@@ -84,6 +113,10 @@ def acciones (value):
             3: buscar_musica,
             4: eliminar_musica,
             5: actualizar_musica,
+            6: funciones_artistas.crear_artista,
+            7: mostrar_lista_artistas,
+            8: buscar_artista,
+            9: eliminar_artista
             
         }[value]
     except KeyError:
@@ -92,6 +125,7 @@ def acciones (value):
 #función principal
 def main(option):
     while option != 0:
+        print("\nTienda de Música:")
         print("\nOpciones:")
         print('\nCanciones')
         print("1) Ingresar una canción")
@@ -99,6 +133,11 @@ def main(option):
         print("3) Buscar canción")
         print("4) Eliminar canción")
         print("5) Actualizar canción")
+        print('\nArtistas')
+        print("6) Ingresar artista")
+        print("7) listar artista")
+        print("8) Buscar artista")
+        print("9) Eliminar artista")
         print("0) Salir")
         read = input("Ingrese una opción: ")
         if (read.isnumeric()):
