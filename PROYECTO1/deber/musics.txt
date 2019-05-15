@@ -1,4 +1,5 @@
 5;roc;;;;;No vendido
+1;pop;;;;;No vendido
+2;merengue;;;;;No vendido
+3;Bachata;NuevoSueño;Juan;Enero 2016;Antigua;No vendido
 0;;;;;;No vendido
-;;;;;;No vendido
-6;Bachata;NuevoSueño;Juan;Enero 2016;Antigua;No vendido
